@@ -3,11 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="theme-color" content="#407C42">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16.png">
+<link rel="mask-icon" href="./icons/safari-pinned-tab.svg" color="#407C42">
+<meta name="msapplication-TileColor" content="#407C42">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title id="page-title">キクタンTOEIC800</title>
 <style>
     :root { 
-        --primary: #556B2F; 
-        --primary-light: #556B2Fcc;
+        --primary: #407C42; 
+        --primary-light: #407C42cc;
         --bg: #f0f7f9; 
         --card-bg: #ffffff; 
         --text: #1c1c1e; 
@@ -519,7 +529,7 @@
 
 
 /* === Allow text selection on word/meaning (iPhone long-press copy) === */
-.word-text, .meaning-text, {
+.word-text, .meaning-text {
   -webkit-user-select: text !important;
   user-select: text !important;
   -webkit-touch-callout: default !important;
@@ -542,7 +552,7 @@
             </div>
             <div class="config-row">
                 <label>テーマカラー</label>
-                <input type="color" id="inpColor" value="#556B2F" onchange="updateTheme()">
+                <input type="color" id="inpColor" value="#407C42" onchange="updateTheme()">
             </div>
         </div>
 
@@ -2606,5 +2616,14 @@ function updateLv(n, lv) {
 })();
 
 </script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(()=>{});
+  });
+}
+</script>
+
 </body>
 </html>
